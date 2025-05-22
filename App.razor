@@ -1,0 +1,20 @@
+﻿<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <MudContainer MaxWidth="MaxWidth.Small" Class="mt-16">
+                <MudText Typo="Typo.h3" Align="Align.Center">404 - Pagina niet gevonden</MudText>
+                <MudText Align="Align.Center">Sorry, deze pagina bestaat niet.</MudText>
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" Link="/" Class="mt-4">Terug naar home</MudButton>
+            </MudContainer>
+        </LayoutView>
+    </NotFound>
+</Router>
+
+<MudThemeProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />

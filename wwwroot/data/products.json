@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Vintage Klok",
+    "description": "Prachtige antieke klok uit de jaren 50, perfect werkend en in uitstekende staat.",
+    "imageUrl": "https://picsum.photos/300/200",
+    "price": 149.99,
+    "isSold": false,
+    "isHighlight": false
+  },
+  {
+    "title": "Designer Stoel",
+    "description": "Unieke designer stoel, perfect voor vaderdag! Zeer comfortabel en stijlvol.",
+    "imageUrl": "https://picsum.photos/300/201",
+    "price": 299.99,
+    "isSold": false,
+    "isHighlight": true
+  },
+  {
+    "title": "Antieke Spiegel",
+    "description": "Grote antieke spiegel met vergulde lijst, helaas al verkocht.",
+    "imageUrl": "https://picsum.photos/300/202",
+    "price": 199.99,
+    "isSold": true,
+    "isHighlight": false
+  }
+] 
