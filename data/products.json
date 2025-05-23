@@ -30,5 +30,13 @@
     "price": 199.99,
     "isSold": true,
     "isHighlight": false
+  },
+  {
+    "title": "Nieuwe tafel",
+    "description": "Grote antieke tafel met vergulde lijst, helaas al verkocht.",
+    "imageUrl": "https://picsum.photos/300/202",
+    "price": 199.99,
+    "isSold": true,
+    "isHighlight": true
   }
 ] 

@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Stanpaca.Etalage",
   "resources": {
-    "hash": "sha256-Mu9Hy8DkCh7zan208pL/zbk2lIdQcYociTVaSHIjbEQ=",
+    "hash": "sha256-bCQE/j3c7nIfyFFglfq4iT+LHn58mE8I1ttgRriKAS0=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Components.jcgczfsfog.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.1c6vhne5uo.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
@@ -40,7 +40,7 @@
       "System.Text.Json.425g3kqnnt.wasm": "System.Text.Json.wasm",
       "System.Text.RegularExpressions.h3l1a1we5f.wasm": "System.Text.RegularExpressions.wasm",
       "System.Private.CoreLib.jy67hmm8on.wasm": "System.Private.CoreLib.wasm",
-      "Stanpaca.Etalage.x5cn4rpw0q.wasm": "Stanpaca.Etalage.wasm",
+      "Stanpaca.Etalage.jhy5r9rdvc.wasm": "Stanpaca.Etalage.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.native.uhsveqo9bs.js": "dotnet.native.js",
       "dotnet.native.swgexbmoy7.wasm": "dotnet.native.wasm",
@@ -103,7 +103,7 @@
       "System.Text.Encodings.Web.n7nth9auq4.wasm": "sha256-PVCrhDn4h1OgqMGUhEs25nlp1YW7mMfPoEgZxltnMoo=",
       "System.Text.Json.425g3kqnnt.wasm": "sha256-ZG9YtTgsFv/HexHgU3FWBLQTDyzB/NsnWiq8/DBeV9Q=",
       "System.Text.RegularExpressions.h3l1a1we5f.wasm": "sha256-DY8GwcC946hc7qjTc2AEhxxH8dcZT3uJdSQG3OTyfr8=",
-      "Stanpaca.Etalage.x5cn4rpw0q.wasm": "sha256-Vf2+/57JbTpQN9Oa7xVwdJN6nN88DSWhlAmRK0h3DTo="
+      "Stanpaca.Etalage.jhy5r9rdvc.wasm": "sha256-KRMZtzySkIikhYQIqCFyu9vB9XfZtI/41lLKhY0rLvY="
     }
   },
   "cacheBootResources": true,
