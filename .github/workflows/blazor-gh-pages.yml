@@ -15,7 +15,7 @@ jobs:
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '9.0.100-preview.2'  # 👈 gebruik een geldige preview-versie van .NET 9
+          dotnet-version: '9.0.x'  # 👈 gebruik een geldige preview-versie van .NET 9
 
       - name: Publish
         run: dotnet publish -c Release -o release
