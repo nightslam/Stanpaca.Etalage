@@ -1,9 +1,9 @@
 {
   "mainAssemblyName": "Stanpaca.Etalage",
   "resources": {
-    "hash": "sha256-8kWGSJmTAhV+knmMU1PAiKvuoRUCwzSsp1xCDMZN0so=",
+    "hash": "sha256-I3w3+WUNiUc4DADR2kLEiF4PyTqDUIg0SfzSzlmWO0g=",
     "fingerprinting": {
-      "Microsoft.AspNetCore.Components.jcgczfsfog.wasm": "Microsoft.AspNetCore.Components.wasm",
+      "Microsoft.AspNetCore.Components.gjdjpfven2.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.1c6vhne5uo.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
       "Microsoft.AspNetCore.Components.WebAssembly.d13yrm8kw4.wasm": "Microsoft.AspNetCore.Components.WebAssembly.wasm",
       "Microsoft.Extensions.Configuration.pvawjtuhi4.wasm": "Microsoft.Extensions.Configuration.wasm",
@@ -19,10 +19,10 @@
       "Microsoft.Extensions.Primitives.2t6a8ek1ml.wasm": "Microsoft.Extensions.Primitives.wasm",
       "Microsoft.JSInterop.o187eofblz.wasm": "Microsoft.JSInterop.wasm",
       "Microsoft.JSInterop.WebAssembly.lsljofql11.wasm": "Microsoft.JSInterop.WebAssembly.wasm",
-      "MudBlazor.i4w3mq8x15.wasm": "MudBlazor.wasm",
+      "MudBlazor.5t3t0dboge.wasm": "MudBlazor.wasm",
       "System.Collections.Concurrent.a0lcmivspy.wasm": "System.Collections.Concurrent.wasm",
       "System.Collections.Immutable.0ynnh8xzch.wasm": "System.Collections.Immutable.wasm",
-      "System.Collections.exh16ho4w5.wasm": "System.Collections.wasm",
+      "System.Collections.5x2napfjsb.wasm": "System.Collections.wasm",
       "System.ComponentModel.Primitives.x9lgbprwj4.wasm": "System.ComponentModel.Primitives.wasm",
       "System.ComponentModel.hd4i21d5zf.wasm": "System.ComponentModel.wasm",
       "System.Console.gfqrhpaqb1.wasm": "System.Console.wasm",
@@ -35,12 +35,12 @@
       "System.Net.Primitives.6p59uqgnlv.wasm": "System.Net.Primitives.wasm",
       "System.Private.Uri.8j72qbx6ih.wasm": "System.Private.Uri.wasm",
       "System.Runtime.InteropServices.JavaScript.5pcrya9j00.wasm": "System.Runtime.InteropServices.JavaScript.wasm",
-      "System.Runtime.nti45uetyy.wasm": "System.Runtime.wasm",
+      "System.Runtime.3brlcvg81o.wasm": "System.Runtime.wasm",
       "System.Text.Encodings.Web.n7nth9auq4.wasm": "System.Text.Encodings.Web.wasm",
       "System.Text.Json.425g3kqnnt.wasm": "System.Text.Json.wasm",
       "System.Text.RegularExpressions.h3l1a1we5f.wasm": "System.Text.RegularExpressions.wasm",
-      "System.Private.CoreLib.jy67hmm8on.wasm": "System.Private.CoreLib.wasm",
-      "Stanpaca.Etalage.7qx6m4ikjc.wasm": "Stanpaca.Etalage.wasm",
+      "System.Private.CoreLib.utgio9lmkn.wasm": "System.Private.CoreLib.wasm",
+      "Stanpaca.Etalage.wbt6sxweiu.wasm": "Stanpaca.Etalage.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.native.uhsveqo9bs.js": "dotnet.native.js",
       "dotnet.native.swgexbmoy7.wasm": "dotnet.native.wasm",
@@ -65,10 +65,10 @@
     },
     "coreAssembly": {
       "System.Runtime.InteropServices.JavaScript.5pcrya9j00.wasm": "sha256-92zUoi9qwW2rZalWHIYTUNdUv+uUJLg6ZLS4Aj0eqHk=",
-      "System.Private.CoreLib.jy67hmm8on.wasm": "sha256-+0ekuDFLrkEVyIa0PSLHgmovHgEzz+cSFMGLpDYgy3E="
+      "System.Private.CoreLib.utgio9lmkn.wasm": "sha256-Ti6WWMuv3FurqEgpBka7rC47ZlvQQptYGJ3P7ab2vT8="
     },
     "assembly": {
-      "Microsoft.AspNetCore.Components.jcgczfsfog.wasm": "sha256-w/z8+GNqH29O/OIK+q7imauzWYXbLtTS2PVTCC8qIDU=",
+      "Microsoft.AspNetCore.Components.gjdjpfven2.wasm": "sha256-TJBnxfGebEcTfpmJN6cCZ1/EgnOlTHCc7QK3awLohmk=",
       "Microsoft.AspNetCore.Components.Web.1c6vhne5uo.wasm": "sha256-L0G5+zVs0WfseDdP9Wk5KKCa1xDPa02J8CSaKjIegig=",
       "Microsoft.AspNetCore.Components.WebAssembly.d13yrm8kw4.wasm": "sha256-Hymk0fViavnVW/gMYu9JN650NQTS5P8zPntoNQH10Xw=",
       "Microsoft.Extensions.Configuration.pvawjtuhi4.wasm": "sha256-FaaaOUKTSpAYkiRXlXvtko5FVnHLdZR5AardvxtziDM=",
@@ -84,10 +84,10 @@
       "Microsoft.Extensions.Primitives.2t6a8ek1ml.wasm": "sha256-9sBOSpmqVgdkfoIHyEZ5pl7+xVNmC6ndBL6zcSGBAf8=",
       "Microsoft.JSInterop.o187eofblz.wasm": "sha256-hP00MtFBUzH4VfQmr0vCO/JgXXPBUxu8WZErE/K6sew=",
       "Microsoft.JSInterop.WebAssembly.lsljofql11.wasm": "sha256-63bzxZLVvNOmTsso6iLrptxGmKBQh2HUIEGtPUrRPeQ=",
-      "MudBlazor.i4w3mq8x15.wasm": "sha256-YgNfK6s7gKdAiLOty4e5VLLpuTXxKdYviOxOcEZWxBM=",
+      "MudBlazor.5t3t0dboge.wasm": "sha256-d0M9WfznSAqCH5UWGo5P2pbadeZUPP9xjcClJVyB8c8=",
       "System.Collections.Concurrent.a0lcmivspy.wasm": "sha256-WkPfcAQ11WZGI9FRmWsGsp76qiNdiwDbVbtjUD+6VIY=",
       "System.Collections.Immutable.0ynnh8xzch.wasm": "sha256-CIZSaSzd7IeJjoA7OWwDrkXk6ZgP79O+oYV3U5XbfHI=",
-      "System.Collections.exh16ho4w5.wasm": "sha256-AjuWxHiQAAc+ovTayU6bxJDC8EkDYL2xCgYrS4mNUSo=",
+      "System.Collections.5x2napfjsb.wasm": "sha256-d5Psm8UrvB/+Cl2uuROzpPXza6Rb0R77m/8NEq6jMgk=",
       "System.ComponentModel.Primitives.x9lgbprwj4.wasm": "sha256-tW5BQZmjdCQjYgytBD9206i1fo1H+jzpxyxxJlz8hSg=",
       "System.ComponentModel.hd4i21d5zf.wasm": "sha256-WyPLE0inD0/vY79fvGY+k+jDku6WEB8WJruWIMhiBXM=",
       "System.Console.gfqrhpaqb1.wasm": "sha256-dGy2lo5gnpaqroAz+Ee7cpkxe2OdwHcgZ0uNMH1n/Ro=",
@@ -99,11 +99,11 @@
       "System.Net.Http.zlafymfltu.wasm": "sha256-d43e04r5AH05WTJ6rNlsWLNugb7z5iQcGful83CmwR4=",
       "System.Net.Primitives.6p59uqgnlv.wasm": "sha256-5jS6wHg5BUfY2FckWbpdn75sOjWbxL6YA0gKEgWpUq8=",
       "System.Private.Uri.8j72qbx6ih.wasm": "sha256-pIgtcTeSYiQBPAO/RWabXICN33tBfG8XCemnOH/usGI=",
-      "System.Runtime.nti45uetyy.wasm": "sha256-S7VcggbdhuIOIKOc/d+vF/oDiJdYLdBYCunxYG1pvrk=",
+      "System.Runtime.3brlcvg81o.wasm": "sha256-f+Ww8umPRhkbenizsSna0/yq/FMAU0YnF1j9ZWwq/NU=",
       "System.Text.Encodings.Web.n7nth9auq4.wasm": "sha256-PVCrhDn4h1OgqMGUhEs25nlp1YW7mMfPoEgZxltnMoo=",
       "System.Text.Json.425g3kqnnt.wasm": "sha256-ZG9YtTgsFv/HexHgU3FWBLQTDyzB/NsnWiq8/DBeV9Q=",
       "System.Text.RegularExpressions.h3l1a1we5f.wasm": "sha256-DY8GwcC946hc7qjTc2AEhxxH8dcZT3uJdSQG3OTyfr8=",
-      "Stanpaca.Etalage.7qx6m4ikjc.wasm": "sha256-wYlt9lBdNUGqBMaF3V7dN1YC+olgfJOmoDGUceHDaSs="
+      "Stanpaca.Etalage.wbt6sxweiu.wasm": "sha256-/BkVWctjQp5P1a5KiVJEdpzC8IDlSRc2YGSFJlHw5oc="
     }
   },
   "cacheBootResources": true,

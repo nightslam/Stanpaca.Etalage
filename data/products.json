@@ -1,42 +1,58 @@
 [
   {
-    "title": "Vintage Klok",
-    "description": "Prachtige antieke klok uit de jaren 50, perfect werkend en in uitstekende staat.",
-    "imageUrl": "https://picsum.photos/300/200",
-    "price": 149.99,
-    "isSold": false,
-    "isHighlight": false
+    "title": "Populieren tafel",
+    "description": "Handgemaakte tafel van populierenhout met natuurlijke rand en metalen poten.",
+    "imageUrl": "images/products/BurlTafel.jpg",
+    "price": 0,
+    "isAvailable": true,
+    "SpecialEvent": ""
   },
   {
-    "title": "Designer Stoel",
-    "description": "Unieke designer stoel, perfect voor vaderdag! Zeer comfortabel en stijlvol.",
-    "imageUrl": "https://picsum.photos/300/201",
-    "price": 299.99,
-    "isSold": false,
-    "isHighlight": true
+    "title": "Walnoot rivier tafel",
+    "description": "walnoot tafel met blauwe epoxy-rivier inleg.",
+    "imageUrl": "images/products/WalnootEpoxyTafel.jpg",
+    "price": 0,
+    "isAvailable": true,
+    "SpecialEvent": ""
   },
   {
-    "title": "Antieke Spiegel",
-    "description": "Grote antieke spiegel met vergulde lijst, helaas al verkocht.",
-    "imageUrl": "https://picsum.photos/300/202",
-    "price": 199.99,
-    "isSold": true,
-    "isHighlight": false
+    "title": "Walnoot naambord",
+    "description": "Naambord uit walnoot met uitgesneden naam en blauwe epoxy-vulling.",
+    "imageUrl": "images/products/WalnootEpoxyNaambordje.jpg",
+    "price": 0,
+    "isAvailable": true,
+    "SpecialEvent": ""
   },
   {
-    "title": "Nieuwe tafel",
-    "description": "Grote antieke tafel met vergulde lijst, helaas al verkocht.",
-    "imageUrl": "https://picsum.photos/300/202",
-    "price": 199.99,
-    "isSold": true,
-    "isHighlight": false
+    "title": "Pensioen tegels",
+    "description": "Persoonlijke tegels met gegraveerde gedichten voor pensioenmomenten.",
+    "imageUrl": "images/products/PensioenTegels.jpg",
+    "price": 0,
+    "isAvailable": true,
+    "SpecialEvent": ""
   },
   {
-    "title": "Nieuwe tafel",
-    "description": "Grote antieke tafel met vergulde lijst, helaas al verkocht.",
-    "imageUrl": "https://picsum.photos/300/202",
-    "price": 199.99,
-    "isSold": true,
-    "isHighlight": true
+    "title": "Leisteen Naambord",
+    "description": "Robuust naambord van leisteen met familienaam en huisnummer, volledig gegraveerd.",
+    "imageUrl": "images/products/MarlenyNaambordje.jpg",
+    "price": 0,
+    "isAvailable": true,
+    "SpecialEvent": ""
+  },
+  {
+    "title": "Onderzetters",
+    "description": "Set houten onderzetters met gepersonaliseerde gravures: naam, leeftijd en figuren zoals Nijntje.",
+    "imageUrl": "images/products/StanOnderzetters.jpg",
+    "price": 0,
+    "isAvailable": true,
+    "SpecialEvent": ""
+  },
+  {
+    "title": "Vaderdag tegel",
+    "description": "Gravure op keramische tegel: 'Daddy Cool' en 'Opa je bent de liefste'. Perfect cadeau voor Vaderdag of opa.",
+    "imageUrl": "images/products/VaderdagTegels.jpg",
+    "price": 7.5,
+    "isAvailable": true,
+    "SpecialEvent": "Vaderdag"
   }
 ] 
