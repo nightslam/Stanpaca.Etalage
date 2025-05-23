@@ -28,6 +28,9 @@ jobs:
           mkdir output
           cp -r release/wwwroot/* output/
 
+      - name: Add CNAME file
+        run: echo 'stanpaca.nl' > output/CNAME
+
       - name: Add .nojekyll to disable Jekyll
         run: echo "" > output/.nojekyll
 
