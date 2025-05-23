@@ -10,42 +10,50 @@
 }
 else
 {
-    @if (_highlightProducts.Any())
+    @if (_specialeventProducts.Any())
     {
         <MudText Typo="Typo.h4" Class="mb-4">Uitgelichte producten</MudText>
         <MudGrid>
-            @foreach (var product in _highlightProducts)
+            @foreach (var product in _specialeventProducts)
             {
                 <MudItem xs="12" sm="6" md="4">
                     <MudCard Elevation="4" Class="rounded-lg" Style="border: 2px solid #FF9800;">
-                        <MudCardMedia Image="@product.ImageUrl" Height="200" />
+                        <MudCardMedia Image="@product.ImageUrl" Height="350" Style="object-fit: cover; width: 100%;" />
                         <MudCardContent>
-                            <MudChip T="string" Color="Color.Warning" Size="Size.Small" Class="mb-2">Vaderdag</MudChip>
+                            <MudChip T="string" Color="Color.Warning" Size="Size.Small" Class="mb-2">@product.SpecialEvent</MudChip>
                             <MudText Typo="Typo.h6">@product.Title</MudText>
                             <MudText Typo="Typo.body2">@product.Description</MudText>
-                            <MudText Typo="Typo.h6" Color="Color.Primary" Class="mt-2">€@product.Price.ToString("F2")</MudText>
+                            @if (product.Price > 0)
+                            {
+                                <MudText Typo="Typo.h6" Color="Color.Primary" Class="mt-2">€@product.Price.ToString("F2")</MudText>
+                            }                            
                         </MudCardContent>
                     </MudCard>
                 </MudItem>
             }
-        </MudGrid>
+            </MudGrid>
     }
 
     <MudText Typo="Typo.h4" Class="mt-6 mb-4">Alle producten</MudText>
     <MudGrid>
-        @foreach (var product in _products)
+        @foreach (var product in _products.Where(product => string.IsNullOrEmpty(product.SpecialEvent)))
         {
             <MudItem xs="12" sm="6" md="4">
                 <MudCard Elevation="2" Class="rounded-lg">
-                    <MudCardMedia Image="@product.ImageUrl" Height="200" />
+                    @* <MudCardMedia Image="@product.ImageUrl" Height="200" /> *@
+                    <MudCardMedia Image="@product.ImageUrl" Height="350" Style="object-fit: cover; width: 100%;" />
+
                     <MudCardContent>
-                        @if (product.IsSold)
+                        @if (!product.IsAvailable)
                         {
-                            <MudChip T="string" Color="Color.Error" Size="Size.Small" Class="mb-2">Verkocht</MudChip>
+                            <MudChip T="string" Color="Color.Error" Size="Size.Small" Class="mb-2">Niet meer beschikbaar</MudChip>
                         }
                         <MudText Typo="Typo.h6">@product.Title</MudText>
                         <MudText Typo="Typo.body2">@product.Description</MudText>
-                        <MudText Typo="Typo.h6" Color="Color.Primary" Class="mt-2">€@product.Price.ToString("F2")</MudText>
+                        @if (product.Price > 0)
+                        {
+                            <MudText Typo="Typo.h6" Color="Color.Primary" Class="mt-2">€@product.Price.ToString("F2")</MudText>
+                        }
                     </MudCardContent>
                 </MudCard>
             </MudItem>
@@ -55,7 +63,7 @@ else
 
 @code {
     private List<Product>? _products;
-    private IEnumerable<Product> _highlightProducts => _products?.Where(p => p.IsHighlight) ?? Enumerable.Empty<Product>();
+    private IEnumerable<Product> _specialeventProducts => _products?.Where(p => !string.IsNullOrEmpty(p.SpecialEvent)) ?? Enumerable.Empty<Product>();
 
     protected override async Task OnInitializedAsync()
     {

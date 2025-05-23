@@ -2,8 +2,10 @@
 @inherits LayoutComponentBase
 
 <MudLayout>
-    <MudAppBar Elevation="1">
+    <MudAppBar Elevation="1" >
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="DrawerToggle" />
+        <MudImage Class="ml-2" Src="images/logo/logo.jpg" Alt="StanPaca logo" Style="height:60px;" />       
+        <MudSpacer />
         <MudText Typo="Typo.h6">Stanpaca Etalage</MudText>
         <MudSpacer />
     </MudAppBar>
@@ -18,7 +20,7 @@
 </MudLayout>
 
 @code {
-    bool _drawerOpen = true;
+    bool _drawerOpen = false;
 
     void DrawerToggle()
     {
