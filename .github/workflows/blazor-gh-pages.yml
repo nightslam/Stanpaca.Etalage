@@ -1,0 +1,36 @@
+name: Deploy Blazor WebAssembly to GitHub Pages
+
+on:
+  push:
+    branches: [master]  # Pas aan als je een andere branch gebruikt
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '7.0.x'  # Pas aan indien nodig
+
+      - name: Publish
+        run: dotnet publish -c Release -o release
+
+      - name: Copy wwwroot to output
+        run: |
+          mkdir output
+          cp -r release/wwwroot/* output/
+
+      - name: Add .nojekyll to disable Jekyll
+        run: echo "" > output/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          publish_branch: gh-pages
