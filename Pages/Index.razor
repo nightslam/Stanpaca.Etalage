@@ -1,60 +1,105 @@
 @page "/"
-@using Stanpaca.Etalage.Models
 @inject HttpClient Http
+@inject IDialogService DialogService
 
-<PageTitle>Stanpaca Etalage</PageTitle>
+<PageTitle>Stanpaca — Handgemaakt met passie</PageTitle>
 
 @if (_products == null)
 {
-    <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+    <div class="d-flex justify-center mt-16">
+        <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+    </div>
 }
 else
 {
-    @if (_specialeventProducts.Any())
+    @* Uitgelichte producten *@
+    @if (_specialEventProducts.Any())
     {
-        <MudText Typo="Typo.h4" Class="mb-4">Uitgelichte producten</MudText>
-        <MudGrid>
-            @foreach (var product in _specialeventProducts)
-            {
-                <MudItem xs="12" sm="6" md="4">
-                    <MudCard Elevation="4" Class="rounded-lg" Style="border: 2px solid #FF9800;">
-                        <MudCardMedia Image="@product.ImageUrl" Height="350" Style="object-fit: cover; width: 100%;" />
-                        <MudCardContent>
-                            <MudChip T="string" Color="Color.Warning" Size="Size.Small" Class="mb-2">@product.SpecialEvent</MudChip>
-                            <MudText Typo="Typo.h6">@product.Title</MudText>
-                            <MudText Typo="Typo.body2">@product.Description</MudText>
-                            @if (product.Price > 0)
-                            {
-                                <MudText Typo="Typo.h6" Color="Color.Primary" Class="mt-2">€@product.Price.ToString("F2")</MudText>
-                            }                            
-                        </MudCardContent>
-                    </MudCard>
-                </MudItem>
-            }
+        <MudPaper Elevation="0" Class="mb-8 pa-6"
+                  Style="background: linear-gradient(135deg, #fff8e1, #fff3e0); border-radius: 12px; border: 2px solid #FFB300;">
+            <div class="d-flex align-center mb-4">
+                <MudIcon Icon="@Icons.Material.Filled.Star" Color="Color.Warning" Class="mr-2" />
+                <MudText Typo="Typo.h5" Style="font-weight: 600;">Uitgelichte producten</MudText>
+            </div>
+            <MudGrid>
+                @foreach (var product in _specialEventProducts)
+                {
+                    <MudItem xs="12" sm="6" md="4">
+                        <MudCard Elevation="3" Style="border: 2px solid #FF8F00; border-radius: 12px; height: 100%; display: flex; flex-direction: column;">
+                            <MudCardMedia Image="@product.ImageUrl" Height="260" />
+                            <MudCardContent Style="flex: 1;">
+                                <MudChip T="string" Color="Color.Warning" Size="Size.Small" Class="mb-2">@product.SpecialEvent</MudChip>
+                                <MudText Typo="Typo.h6">@product.Title</MudText>
+                                <MudText Typo="Typo.body2" Class="mt-1">@product.ShortDescription</MudText>
+                                @if (product.Price > 0)
+                                {
+                                    <MudText Typo="Typo.h6" Color="Color.Primary" Class="mt-2">€@product.Price.ToString("F2")</MudText>
+                                }
+                            </MudCardContent>
+                            <MudCardActions>
+                                <MudButton Variant="Variant.Text" Color="Color.Default"
+                                           OnClick="@(() => ShowDetails(product))">Meer info</MudButton>
+                                <MudSpacer />
+                                <MudButton Variant="Variant.Filled" Color="Color.Primary"
+                                           OnClick="@(() => ShowOrder(product))">Aanvragen</MudButton>
+                            </MudCardActions>
+                        </MudCard>
+                    </MudItem>
+                }
             </MudGrid>
+        </MudPaper>
     }
 
-    <MudText Typo="Typo.h4" Class="mt-6 mb-4">Alle producten</MudText>
+    @* Categorie filter *@
+    <div class="d-flex gap-2 flex-wrap mb-6">
+        <MudButton Variant="@(_selectedCategory == null ? Variant.Filled : Variant.Outlined)"
+                   Color="Color.Primary" Size="Size.Small"
+                   OnClick="@(() => _selectedCategory = null)">
+            Alles
+        </MudButton>
+        @foreach (var category in _categories)
+        {
+            <MudButton Variant="@(_selectedCategory == category ? Variant.Filled : Variant.Outlined)"
+                       Color="Color.Primary" Size="Size.Small"
+                       OnClick="@(() => _selectedCategory = category)">
+                @category
+            </MudButton>
+        }
+    </div>
+
+    @* Product grid *@
     <MudGrid>
-        @foreach (var product in _products.Where(product => string.IsNullOrEmpty(product.SpecialEvent)))
+        @foreach (var product in FilteredProducts)
         {
             <MudItem xs="12" sm="6" md="4">
-                <MudCard Elevation="2" Class="rounded-lg">
-                    @* <MudCardMedia Image="@product.ImageUrl" Height="200" /> *@
-                    <MudCardMedia Image="@product.ImageUrl" Height="350" Style="object-fit: cover; width: 100%;" />
-
-                    <MudCardContent>
+                <MudCard Elevation="2" Style="border-radius: 12px; height: 100%; display: flex; flex-direction: column;">
+                    <MudCardMedia Image="@product.ImageUrl" Height="260" />
+                    <MudCardContent Style="flex: 1;">
                         @if (!product.IsAvailable)
                         {
-                            <MudChip T="string" Color="Color.Error" Size="Size.Small" Class="mb-2">Niet meer beschikbaar</MudChip>
+                            <MudChip T="string" Color="Color.Error" Size="Size.Small" Class="mb-2">Niet beschikbaar</MudChip>
+                        }
+                        @if (!string.IsNullOrEmpty(product.Category))
+                        {
+                            <MudChip T="string" Color="Color.Default" Size="Size.Small" Class="mb-2">@product.Category</MudChip>
                         }
                         <MudText Typo="Typo.h6">@product.Title</MudText>
-                        <MudText Typo="Typo.body2">@product.Description</MudText>
+                        <MudText Typo="Typo.body2" Class="mt-1">@product.ShortDescription</MudText>
                         @if (product.Price > 0)
                         {
                             <MudText Typo="Typo.h6" Color="Color.Primary" Class="mt-2">€@product.Price.ToString("F2")</MudText>
                         }
                     </MudCardContent>
+                    <MudCardActions>
+                        <MudButton Variant="Variant.Text" Color="Color.Default"
+                                   OnClick="@(() => ShowDetails(product))">Meer info</MudButton>
+                        <MudSpacer />
+                        @if (product.IsAvailable)
+                        {
+                            <MudButton Variant="Variant.Filled" Color="Color.Primary"
+                                       OnClick="@(() => ShowOrder(product))">Aanvragen</MudButton>
+                        }
+                    </MudCardActions>
                 </MudCard>
             </MudItem>
         }
@@ -63,7 +108,27 @@ else
 
 @code {
     private List<Product>? _products;
-    private IEnumerable<Product> _specialeventProducts => _products?.Where(p => !string.IsNullOrEmpty(p.SpecialEvent)) ?? Enumerable.Empty<Product>();
+    private string? _selectedCategory;
+
+    private IEnumerable<Product> _specialEventProducts =>
+        _products?.Where(p => !string.IsNullOrEmpty(p.SpecialEvent)) ?? [];
+
+    private IEnumerable<string> _categories =>
+        _products?
+            .Where(p => string.IsNullOrEmpty(p.SpecialEvent) && !string.IsNullOrEmpty(p.Category))
+            .Select(p => p.Category)
+            .Distinct() ?? [];
+
+    private IEnumerable<Product> FilteredProducts
+    {
+        get
+        {
+            var regular = _products?.Where(p => string.IsNullOrEmpty(p.SpecialEvent)) ?? [];
+            return string.IsNullOrEmpty(_selectedCategory)
+                ? regular
+                : regular.Where(p => p.Category == _selectedCategory);
+        }
+    }
 
     protected override async Task OnInitializedAsync()
     {
@@ -76,4 +141,30 @@ else
             Console.WriteLine($"Error loading products: {ex.Message}");
         }
     }
-} 
+
+    private static readonly DialogOptions _detailOptions = new()
+    {
+        MaxWidth = MaxWidth.Medium,
+        FullWidth = true,
+        CloseButton = true
+    };
+
+    private static readonly DialogOptions _orderOptions = new()
+    {
+        MaxWidth = MaxWidth.Small,
+        FullWidth = true,
+        CloseButton = true
+    };
+
+    private Task ShowDetails(Product product)
+    {
+        var parameters = new DialogParameters { ["Product"] = product };
+        return DialogService.ShowAsync<ProductDetailDialog>(product.Title, parameters, _detailOptions);
+    }
+
+    private Task ShowOrder(Product product)
+    {
+        var parameters = new DialogParameters { ["Product"] = product };
+        return DialogService.ShowAsync<OrderDialog>("Aanvraag indienen", parameters, _orderOptions);
+    }
+}

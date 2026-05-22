@@ -1,58 +1,79 @@
 [
   {
     "title": "Populieren tafel",
-    "description": "Handgemaakte tafel van populierenhout met natuurlijke rand en metalen poten.",
+    "category": "Tafels",
+    "shortDescription": "Handgemaakte tafel van populierenhout met natuurlijke rand en metalen poten.",
+    "longDescription": "Deze prachtige tafel is volledig met de hand gemaakt van massief populierenhout. De natuurlijke rand geeft het stuk een authentiek karakter. De stevige metalen poten zorgen voor een industrieel tintje dat mooi contrasteert met het warme hout. Elke tafel is uniek — de tekening van het hout verschilt per stuk. Op aanvraag zijn andere maten of afwerkingen mogelijk.",
     "imageUrl": "images/products/BurlTafel.jpg",
+    "extraImageUrls": [ "images/products/BurlTafel.jpg" ],
     "price": 0,
     "isAvailable": true,
-    "SpecialEvent": ""
+    "specialEvent": ""
   },
   {
     "title": "Walnoot rivier tafel",
-    "description": "walnoot tafel met blauwe epoxy-rivier inleg.",
+    "category": "Tafels",
+    "shortDescription": "Walnoot tafel met blauwe epoxy-rivier inleg.",
+    "longDescription": "Een adembenemende rivier tafel van massief walnoot met een blauw epoxy-rivier die door het midden loopt. De diepe blauwe kleur contrasteert prachtig met de donkere walnoot. Het epoxy is volledig uitgehard en zorgt voor een spiegelgladde afwerking. De tafel is op maat gemaakt en kan worden aangepast in afmetingen en kleur van de epoxy. Ideaal als eettafel, bureau of centerpiece.",
     "imageUrl": "images/products/WalnootEpoxyTafel.jpg",
+    "extraImageUrls": [ "images/products/WalnootEpoxyTafel.jpg" ],
     "price": 0,
     "isAvailable": true,
-    "SpecialEvent": ""
+    "specialEvent": ""
   },
   {
     "title": "Walnoot naambord",
-    "description": "Naambord uit walnoot met uitgesneden naam en blauwe epoxy-vulling.",
+    "category": "Naamborden",
+    "shortDescription": "Naambord uit walnoot met uitgesneden naam en blauwe epoxy-vulling.",
+    "longDescription": "Gepersonaliseerd naambord van massief walnoot, waarbij de naam of tekst wordt uitgefreesd en gevuld met blauw epoxy. Het resultaat is een stijlvol en uniek bord dat perfect past bij een voordeur, kinderkamer of als cadeau. De naam, het lettertype en de kleur van het epoxy zijn volledig aan te passen naar wens.",
     "imageUrl": "images/products/WalnootEpoxyNaambordje.jpg",
+    "extraImageUrls": [ "images/products/WalnootEpoxyNaambordje.jpg" ],
     "price": 0,
     "isAvailable": true,
-    "SpecialEvent": ""
+    "specialEvent": ""
+  },
+  {
+    "title": "Leisteen naambord",
+    "category": "Naamborden",
+    "shortDescription": "Robuust naambord van leisteen met familienaam en huisnummer, volledig gegraveerd.",
+    "longDescription": "Een stijlvol naambord van natuurlijk leisteen, gegraveerd met uw familienaam en huisnummer. Het leisteen is weersbestendig en daardoor perfect voor buiten gebruik. De gravure is scherp en duurzaam. Beschikbaar in verschillende maten. Ideaal als welkomstbord bij de voordeur of als cadeau bij een nieuwe woning.",
+    "imageUrl": "images/products/MarlenyNaambordje.jpg",
+    "extraImageUrls": [ "images/products/MarlenyNaambordje.jpg" ],
+    "price": 0,
+    "isAvailable": true,
+    "specialEvent": ""
   },
   {
     "title": "Pensioen tegels",
-    "description": "Persoonlijke tegels met gegraveerde gedichten voor pensioenmomenten.",
+    "category": "Cadeaus",
+    "shortDescription": "Persoonlijke tegels met gegraveerde gedichten voor pensioenmomenten.",
+    "longDescription": "Een bijzonder gepersonaliseerd cadeau voor iemand die met pensioen gaat. Op een keramische tegel wordt een persoonlijk gedicht of tekst gegraveerd, volledig naar wens samengesteld. Een blijvende herinnering aan een bijzonder moment. De tegel kan worden opgehangen of als decoratie worden gebruikt. Verkrijgbaar in verschillende maten.",
     "imageUrl": "images/products/PensioenTegels.jpg",
+    "extraImageUrls": [ "images/products/PensioenTegels.jpg" ],
     "price": 0,
     "isAvailable": true,
-    "SpecialEvent": ""
-  },
-  {
-    "title": "Leisteen Naambord",
-    "description": "Robuust naambord van leisteen met familienaam en huisnummer, volledig gegraveerd.",
-    "imageUrl": "images/products/MarlenyNaambordje.jpg",
-    "price": 0,
-    "isAvailable": true,
-    "SpecialEvent": ""
+    "specialEvent": ""
   },
   {
     "title": "Onderzetters",
-    "description": "Set houten onderzetters met gepersonaliseerde gravures: naam, leeftijd en figuren zoals Nijntje.",
+    "category": "Cadeaus",
+    "shortDescription": "Set houten onderzetters met gepersonaliseerde gravures: naam, leeftijd en figuren.",
+    "longDescription": "Een set van handgemaakte houten onderzetters, elk gegraveerd met een persoonlijk ontwerp. Denk aan namen, leeftijden, figuren zoals Nijntje, of een eigen tekening. Perfect als cadeau bij een verjaardag, geboorte of jubileum. De onderzetters zijn van hoogwaardig hout en worden geleverd in een set van 4 of 6 stuks. Volledig naar wens personaliseerbaar.",
     "imageUrl": "images/products/StanOnderzetters.jpg",
+    "extraImageUrls": [ "images/products/StanOnderzetters.jpg" ],
     "price": 0,
     "isAvailable": true,
-    "SpecialEvent": ""
+    "specialEvent": ""
   },
   {
     "title": "Vaderdag tegel",
-    "description": "Gravure op keramische tegel: 'Daddy Cool' en 'Opa je bent de liefste'. Perfect cadeau voor Vaderdag of opa.",
+    "category": "Cadeaus",
+    "shortDescription": "Gravure op keramische tegel: 'Daddy Cool' of 'Opa je bent de liefste'. Perfect voor Vaderdag.",
+    "longDescription": "Verras papa of opa dit Vaderdag met een gepersonaliseerde keramische tegel! Met een mooie gravure van 'Daddy Cool', 'Opa je bent de liefste', of een eigen tekst naar keuze. De tegel is duurzaam, makkelijk schoon te maken en een blijvend aandenken. Leverbaar in meerdere maten. Bestel op tijd — beschikbaar tot Vaderdag!",
     "imageUrl": "images/products/VaderdagTegels.jpg",
-    "price": 7.5,
+    "extraImageUrls": [ "images/products/VaderdagTegels.jpg" ],
+    "price": 7.50,
     "isAvailable": true,
-    "SpecialEvent": "Vaderdag"
+    "specialEvent": "Vaderdag"
   }
-] 
+]

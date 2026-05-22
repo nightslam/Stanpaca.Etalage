@@ -1,0 +1,138 @@
+@inject HttpClient Http
+@inject ISnackbar Snackbar
+
+<MudDialog>
+    <TitleContent>
+        <MudText Typo="Typo.h6">Aanvraag indienen</MudText>
+    </TitleContent>
+    <DialogContent>
+        @if (_success)
+        {
+            <MudAlert Severity="Severity.Success" Class="mt-2">
+                <MudText Typo="Typo.body1"><strong>Aanvraag verstuurd!</strong></MudText>
+                <MudText Typo="Typo.body2" Class="mt-1">
+                    Bedankt voor je aanvraag. We nemen zo snel mogelijk contact met je op.
+                </MudText>
+            </MudAlert>
+        }
+        else
+        {
+            <MudForm @ref="_form" @bind-IsValid="_isValid">
+                <MudTextField @bind-Value="_naam"
+                              Label="Naam"
+                              Required="true"
+                              RequiredError="Naam is verplicht"
+                              Class="mb-3" />
+
+                <MudTextField @bind-Value="_email"
+                              Label="E-mailadres"
+                              Required="true"
+                              InputType="InputType.Email"
+                              RequiredError="E-mailadres is verplicht"
+                              Class="mb-3" />
+
+                <MudTextField @bind-Value="_telefoon"
+                              Label="Telefoonnummer (optioneel)"
+                              InputType="InputType.Telephone"
+                              Class="mb-3" />
+
+                <MudTextField @bind-Value="_product"
+                              Label="Product"
+                              Class="mb-3" />
+
+                <MudTextField @bind-Value="_bericht"
+                              Label="Jouw aanvraag"
+                              HelperText="Beschrijf wat je wilt, bijv. maten, tekst voor gravure, kleurwens..."
+                              Required="true"
+                              RequiredError="Vul je aanvraag in"
+                              Lines="5"
+                              Class="mb-3" />
+            </MudForm>
+        }
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Close" Disabled="_isSubmitting">
+            @(_success ? "Sluiten" : "Annuleren")
+        </MudButton>
+        @if (!_success)
+        {
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       OnClick="Submit"
+                       Disabled="_isSubmitting">
+                @if (_isSubmitting)
+                {
+                    <MudProgressCircular Size="Size.Small" Indeterminate="true" Class="mr-2" />
+                    <span>Versturen...</span>
+                }
+                else
+                {
+                    <span>Versturen</span>
+                }
+            </MudButton>
+        }
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter] IMudDialogInstance MudDialog { get; set; } = null!;
+    [Parameter] public Product? Product { get; set; }
+
+    private MudForm _form = null!;
+    private bool _isValid;
+    private bool _isSubmitting;
+    private bool _success;
+
+    private string _naam = string.Empty;
+    private string _email = string.Empty;
+    private string _telefoon = string.Empty;
+    private string _product = string.Empty;
+    private string _bericht = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        _product = Product?.Title ?? string.Empty;
+    }
+
+    void Close() => MudDialog.Close();
+
+    async Task Submit()
+    {
+        await _form.Validate();
+        if (!_isValid) return;
+
+        _isSubmitting = true;
+        try
+        {
+            var request = new HttpRequestMessage(HttpMethod.Post, "https://formspree.io/f/xdajzezy");
+            request.Headers.Add("Accept", "application/json");
+            request.Content = JsonContent.Create(new
+            {
+                naam = _naam,
+                _replyto = _email,
+                telefoon = string.IsNullOrWhiteSpace(_telefoon) ? "Niet opgegeven" : _telefoon,
+                product = _product,
+                bericht = _bericht,
+                _subject = $"Aanvraag: {_product} — Stanpaca"
+            });
+
+            var response = await Http.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+            {
+                _success = true;
+            }
+            else
+            {
+                Snackbar.Add("Er is iets misgegaan. Probeer het later opnieuw of mail ons direct.", Severity.Error);
+            }
+        }
+        catch
+        {
+            Snackbar.Add("Kan geen verbinding maken. Controleer je internet en probeer opnieuw.", Severity.Error);
+        }
+        finally
+        {
+            _isSubmitting = false;
+        }
+    }
+}

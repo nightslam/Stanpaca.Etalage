@@ -1,0 +1,49 @@
+@inject IDialogService DialogService
+
+<MudDialog>
+    <TitleContent>
+        <MudText Typo="Typo.h6">@Product.Title</MudText>
+    </TitleContent>
+    <DialogContent>
+        @if (Product.ExtraImageUrls?.Any() == true)
+        {
+            <MudCarousel TData="string" Class="mb-4" Style="height: 300px;" ShowArrows="true" ShowBullets="true" AutoCycle="false">
+                @foreach (var image in Product.ExtraImageUrls)
+                {
+                    <MudCarouselItem>
+                        <img src="@image" style="width: 100%; height: 300px; object-fit: cover;" />
+                    </MudCarouselItem>
+                }
+            </MudCarousel>
+        }
+
+        <MudText Typo="Typo.body1" Style="white-space: pre-line;">@Product.LongDescription</MudText>
+
+        @if (Product.Price > 0)
+        {
+            <MudText Typo="Typo.h6" Color="Color.Primary" Class="mt-4">€@Product.Price.ToString("F2")</MudText>
+        }
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Close">Sluiten</MudButton>
+        @if (Product.IsAvailable)
+        {
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Aanvragen">Aanvragen</MudButton>
+        }
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter] IMudDialogInstance MudDialog { get; set; } = null!;
+    [Parameter] public Product Product { get; set; } = null!;
+
+    void Close() => MudDialog.Close();
+
+    async Task Aanvragen()
+    {
+        MudDialog.Close();
+        var parameters = new DialogParameters { ["Product"] = Product };
+        var options = new DialogOptions { MaxWidth = MaxWidth.Small, FullWidth = true, CloseButton = true };
+        await DialogService.ShowAsync<OrderDialog>("Aanvraag indienen", parameters, options);
+    }
+}

@@ -9,12 +9,29 @@
             <MudContainer MaxWidth="MaxWidth.Small" Class="mt-16">
                 <MudText Typo="Typo.h3" Align="Align.Center">404 - Pagina niet gevonden</MudText>
                 <MudText Align="Align.Center">Sorry, deze pagina bestaat niet</MudText>
-                <MudButton Variant="Variant.Filled" Color="Color.Primary" Link="/" Class="mt-4">Terug naar home</MudButton>
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/" Class="mt-4">Terug naar home</MudButton>
             </MudContainer>
         </LayoutView>
     </NotFound>
 </Router>
 
-<MudThemeProvider />
+<MudThemeProvider Theme="_theme" />
 <MudDialogProvider />
 <MudSnackbarProvider />
+
+@code {
+    private readonly MudTheme _theme = new()
+    {
+        PaletteLight = new PaletteLight
+        {
+            Primary = "#795548",
+            PrimaryDarken = "#4b2c20",
+            PrimaryLighten = "#a98274",
+            Secondary = "#FF8F00",
+            AppbarBackground = "#3e2723",
+            AppbarText = "#ffffff",
+            Background = "#fafafa",
+            Surface = "#ffffff",
+        }
+    };
+}

@@ -1,29 +1,31 @@
 @using MudBlazor
 @inherits LayoutComponentBase
+@inject IDialogService DialogService
 
 <MudLayout>
-    <MudAppBar Elevation="1" >
-        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="DrawerToggle" />
-        <MudImage Class="ml-2" Src="images/logo/logo.jpg" Alt="StanPaca logo" Style="height:60px;" />       
+    <MudAppBar Elevation="2" Color="Color.Primary">
+        <MudImage Src="images/logo/logo.jpg" Alt="Stanpaca" Style="height: 48px; border-radius: 4px;" />
+        <MudText Typo="Typo.h6" Class="ml-3" Style="color: white; font-weight: 600; letter-spacing: 1px;">
+            Stanpaca
+        </MudText>
         <MudSpacer />
-        <MudText Typo="Typo.h6">Stanpaca Etalage</MudText>
-        <MudSpacer />
+        <MudButton Variant="Variant.Outlined"
+                   Color="Color.Inherit"
+                   StartIcon="@Icons.Material.Filled.MailOutline"
+                   OnClick="OpenOrderDialog"
+                   Style="border-color: rgba(255,255,255,0.6); color: white;">
+            Aanvraag indienen
+        </MudButton>
     </MudAppBar>
-    <MudDrawer Open="@_drawerOpen" OpenChanged="@(value => _drawerOpen = value)" ClipMode="DrawerClipMode.Always" Elevation="2">
-        <NavMenu />
-    </MudDrawer>
+
     <MudMainContent>
-        <MudContainer MaxWidth="MaxWidth.Large" Class="pt-4">
+        <MudContainer MaxWidth="MaxWidth.Large" Class="py-8">
             @Body
         </MudContainer>
     </MudMainContent>
 </MudLayout>
 
 @code {
-    bool _drawerOpen = false;
-
-    void DrawerToggle()
-    {
-        _drawerOpen = !_drawerOpen;
-    }
-} 
+    private Task OpenOrderDialog() =>
+        DialogService.ShowAsync<OrderDialog>("Aanvraag indienen");
+}
