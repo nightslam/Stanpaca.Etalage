@@ -1,4 +1,16 @@
 [
+
+  {
+    "title": "Gezinsfiguren",
+    "category": "Cadeaus",
+    "shortDescription": "3D geprinte gezinsfiguren op maat: elk gezinslid een eigen kleur, compleet met gegraveerde naam op houten voet.",
+    "longDescription": "Een minimalistisch 3D geprint gezinsbeeld, waarbij elk gezinslid wordt weergegeven als een eigen figuur in een kleur naar keuze. De hoogte van de figuren schaalt mee met de samenstelling van het gezin (ouders, kinderen, huisdieren). Optioneel te plaatsen op een houten voet met gegraveerde familienaam. Een persoonlijk en tijdloos cadeau bij een verjaardag, geboorte, jubileum of gewoon als blijvend aandenken aan je gezin. Volledig naar wens samen te stellen in aantal figuren en kleurstelling.",
+    "imageUrl": "images/products/FamilieBeeld2.jpg",
+    "extraImageUrls": [ "images/products/FamilieBeeld1.jpg" ],
+    "price": 10,
+    "isAvailable": true,
+    "specialEvent": ""
+  },
   {
     "title": "Populieren tafel",
     "category": "Tafels",
@@ -72,8 +84,8 @@
     "longDescription": "Verras papa of opa dit Vaderdag met een gepersonaliseerde keramische tegel! Met een mooie gravure van 'Daddy Cool', 'Opa je bent de liefste', of een eigen tekst naar keuze. De tegel is duurzaam, makkelijk schoon te maken en een blijvend aandenken. Leverbaar in meerdere maten. Bestel op tijd — beschikbaar tot Vaderdag!",
     "imageUrl": "images/products/VaderdagTegels.jpg",
     "extraImageUrls": [ "images/products/VaderdagTegels.jpg" ],
-    "price": 7.50,
+    "price": 0,
     "isAvailable": true,
-    "specialEvent": "Vaderdag"
+    "specialEvent": ""
   }
 ]
